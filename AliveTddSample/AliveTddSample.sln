@@ -3,7 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalaryCardTests", "SalaryCardTests\SalaryCardTests.csproj", "{4A11865E-F28D-44B9-8720-0A0AFA1F2476}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalaryCard", "SalaryCard\SalaryCard.csproj", "{6A2EC222-5868-4A76-9B89-67775B135F2D}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4A11865E-F28D-44B9-8720-0A0AFA1F2476}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A11865E-F28D-44B9-8720-0A0AFA1F2476}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A11865E-F28D-44B9-8720-0A0AFA1F2476}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A11865E-F28D-44B9-8720-0A0AFA1F2476}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A2EC222-5868-4A76-9B89-67775B135F2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A2EC222-5868-4A76-9B89-67775B135F2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A2EC222-5868-4A76-9B89-67775B135F2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A2EC222-5868-4A76-9B89-67775B135F2D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
