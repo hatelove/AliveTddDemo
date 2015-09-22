@@ -12,6 +12,7 @@ namespace SalaryCard
 		public int HourlySalary { get; set; }
 		public DateTime StartTime { get; set; }
 		public double FirstOvertimeRatio { get; set; }
+		public int SecondOvertimeRatio { get; set; }
 
 		public double CalculateSalary()
 		{
@@ -19,17 +20,29 @@ namespace SalaryCard
 			if (workingHour <= 8)
 			{
 				var result = workingHour * this.HourlySalary;
-				return result; 
+				return result;
 			}
 			else
 			{
 				var overtimeHour = workingHour - 8;
-				var overtimeSalary = overtimeHour * this.HourlySalary * this.FirstOvertimeRatio;
+				if (overtimeHour > 2)
+				{
+					var secondOvertimeHour = overtimeHour - 2;
+					var secondOvertimeSalary = secondOvertimeHour * this.HourlySalary * this.SecondOvertimeRatio;
 
-				var normalSalary = 8 * this.HourlySalary;
-				return normalSalary + overtimeSalary;
+					var firstOvertimeSalary = 2 * this.HourlySalary * this.FirstOvertimeRatio;
+					var normalSalary = 8 * this.HourlySalary;
+
+					return normalSalary + firstOvertimeSalary + secondOvertimeSalary;
+				}
+				else
+				{
+					var firstOvertimeSalary = overtimeHour * this.HourlySalary * this.FirstOvertimeRatio;
+					var normalSalary = 8 * this.HourlySalary;
+
+					return normalSalary + firstOvertimeSalary;
+				}
 			}
-			
 		}
 
 		private double GetWorkingHour()
