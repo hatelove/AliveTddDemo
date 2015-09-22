@@ -25,20 +25,25 @@ namespace SalaryCard
 			else
 			{
 				var overtimeHour = workingHour - 8;
+				var normalSalary = 8 * this.HourlySalary;
+
+				if (overtimeHour > 4)
+				{
+					overtimeHour = 4;
+				}
+
 				if (overtimeHour > 2)
 				{
+					var firstOvertimeSalary = 2 * this.HourlySalary * this.FirstOvertimeRatio;
+
 					var secondOvertimeHour = overtimeHour - 2;
 					var secondOvertimeSalary = secondOvertimeHour * this.HourlySalary * this.SecondOvertimeRatio;
-
-					var firstOvertimeSalary = 2 * this.HourlySalary * this.FirstOvertimeRatio;
-					var normalSalary = 8 * this.HourlySalary;
 
 					return normalSalary + firstOvertimeSalary + secondOvertimeSalary;
 				}
 				else
 				{
 					var firstOvertimeSalary = overtimeHour * this.HourlySalary * this.FirstOvertimeRatio;
-					var normalSalary = 8 * this.HourlySalary;
 
 					return normalSalary + firstOvertimeSalary;
 				}
